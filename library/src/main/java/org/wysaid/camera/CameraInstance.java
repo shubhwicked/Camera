@@ -15,12 +15,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Created by wangyang on 15/7/27.
- */
 
 
-// Camera 仅适用单例
+
 public class CameraInstance {
     public static final String LOG_TAG = Common.LOG_TAG;
 
