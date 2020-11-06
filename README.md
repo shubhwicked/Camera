@@ -6,17 +6,15 @@ want use my project
 ```
 allprojects {
 		repositories {
-			...
 			maven { url 'https://jitpack.io' }
 		}
-	}
-	```
+	}	
 
 
-dependency
-
+```
+dependency for app level **build.gradle**
 ```
 dependencies {
 	        implementation 'com.github.shubhwicked:Camera:efd9ce8b06'
 	}
-	```
+```	
