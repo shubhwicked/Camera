@@ -3,16 +3,20 @@ Android Camera app based on GpuImage plus. Apply beauty and filters over the cam
 
 want use my project
 
-`allprojects {
+```
+allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
-	}`
+	}
+	```
 
 
 dependency
 
-`dependencies {
+```
+dependencies {
 	        implementation 'com.github.shubhwicked:Camera:efd9ce8b06'
-	}`
+	}
+	```
