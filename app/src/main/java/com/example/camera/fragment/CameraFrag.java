@@ -250,6 +250,10 @@ public class CameraFrag extends Fragment {
                         mCurrentBeauty=EffectsHelper.beauty5;
                         setFilterConfig();
                         break;
+                        case 6:
+                        mCurrentBeauty=EffectsHelper.beauty6;
+                        setFilterConfig();
+                        break;
                 }
             }
 
