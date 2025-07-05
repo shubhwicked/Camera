@@ -24,6 +24,6 @@ allprojects {
 dependency for app level **build.gradle**
 ```
 dependencies {
-	        implementation 'com.github.shubhwicked:Camera:efd9ce8b06'
-	}
+                implementation 'com.github.shubhwicked:Camera:94c4764'
+        }
 ```	
