@@ -62,8 +62,8 @@ public class CameraInstance {
     public int pictureHeight() { return mPictureHeight; }
 
     public void setPreferPreviewSize(int w, int h) {
-        mPreferPreviewHeight = w;
-        mPreferPreviewWidth = h;
+        mPreferPreviewWidth = w;
+        mPreferPreviewHeight = h;
     }
 
     public interface CameraOpenCallback {
@@ -313,6 +313,11 @@ public class CameraInstance {
         List<String> focusModes = mParams.getSupportedFocusModes();
         if(focusModes.contains(focusMode)){
             mParams.setFocusMode(focusMode);
+            try {
+                mCameraDevice.setParameters(mParams);
+            } catch (Exception e) {
+                Log.e(LOG_TAG, "Error applying focus mode: " + e.toString());
+            }
         }
     }
 
