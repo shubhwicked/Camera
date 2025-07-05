@@ -40,11 +40,24 @@ public class PermissionsUtility {
     }
 
     public boolean checkStoragePermission(Context context) {
-        if (!checkPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-            ActivityCompat.requestPermissions((AppCompatActivity) context,
-                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
-            return false;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (!checkPermission(context, Manifest.permission.READ_MEDIA_IMAGES)
+                    || !checkPermission(context, Manifest.permission.READ_MEDIA_VIDEO)) {
+                ActivityCompat.requestPermissions((AppCompatActivity) context,
+                        new String[]{Manifest.permission.READ_MEDIA_IMAGES,
+                                Manifest.permission.READ_MEDIA_VIDEO},
+                        MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+                return false;
+            }
+        } else {
+            if (!checkPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    || !checkPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                ActivityCompat.requestPermissions((AppCompatActivity) context,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+                return false;
+            }
         }
         return true;
     }
